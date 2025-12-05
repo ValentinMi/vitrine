@@ -1,11 +1,718 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+const currentYear = new Date().getFullYear();
+const deployTime = new Date().toLocaleString('fr-FR', {
+    dateStyle: 'full',
+    timeStyle: 'short'
+});
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebX Factory - Agence Web Moderne 🚀</title>
+    <meta name="description" content="WebX Factory - Votre partenaire digital pour des sites web performants">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- Header -->
+<header class="header">
+    <nav class="nav-container">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">WebX Factory</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact" class="cta-nav">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="badge">✨ Déploiement automatique activé</div>
+        <h1 class="hero-title">
+            Créez des sites web
+            <span class="gradient-text">extraordinaires</span>
+        </h1>
+        <p class="hero-subtitle">
+            WebX Factory transforme vos idées en expériences digitales performantes et modernes
+        </p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">
+                Commencer un projet
+                <span class="btn-icon">→</span>
+            </a>
+            <a href="#services" class="btn btn-secondary">
+                Découvrir nos services
+            </a>
+        </div>
+
+        <!-- Status du déploiement -->
+        <div class="deploy-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Dernière mise à jour: {deployTime}</span>
+        </div>
+    </div>
+
+    <!-- Animated background -->
+    <div class="hero-bg">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">Nos Services</h2>
+        <p class="section-subtitle">Des solutions complètes pour votre présence en ligne</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Design Web</h3>
+                <p>Interfaces modernes et intuitives qui captivent vos utilisateurs</p>
+                <ul class="service-features">
+                    <li>✓ UI/UX Design</li>
+                    <li>✓ Responsive Design</li>
+                    <li>✓ Prototypage</li>
+                </ul>
+            </div>
+
+            <div class="service-card featured">
+                <div class="service-badge">Populaire</div>
+                <div class="service-icon">⚡</div>
+                <h3>Développement</h3>
+                <p>Sites ultra-rapides avec les technologies les plus récentes</p>
+                <ul class="service-features">
+                    <li>✓ Astro / React / Vue</li>
+                    <li>✓ Performance optimale</li>
+                    <li>✓ SEO friendly</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Déploiement</h3>
+                <p>Mise en ligne automatisée et sans stress</p>
+                <ul class="service-features">
+                    <li>✓ CI/CD automatique</li>
+                    <li>✓ Monitoring 24/7</li>
+                    <li>✓ Scalabilité</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Satisfaction Client</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projets Réalisés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">< 1s</div>
+                <div class="stat-label">Temps de Chargement</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Disponible</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="tech">
+    <div class="container">
+        <h2 class="section-title">Technologies Utilisées</h2>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <span class="tech-logo">🚀</span>
+                <span class="tech-name">Astro</span>
+            </div>
+            <div class="tech-item">
+                <span class="tech-logo">⚛️</span>
+                <span class="tech-name">React</span>
+            </div>
+            <div class="tech-item">
+                <span class="tech-logo">🎨</span>
+                <span class="tech-name">Tailwind</span>
+            </div>
+            <div class="tech-item">
+                <span class="tech-logo">🐳</span>
+                <span class="tech-name">Docker</span>
+            </div>
+            <div class="tech-item">
+                <span class="tech-logo">☁️</span>
+                <span class="tech-name">Coolify</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <h2 class="section-title">Prêt à démarrer ?</h2>
+            <p class="section-subtitle">Contactez-nous pour discuter de votre projet</p>
+            <a href="mailto:contact@webxfactory.cloud" class="btn btn-primary btn-large">
+                Envoyer un message
+                <span class="btn-icon">✉️</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">WebX Factory</span>
+            </div>
+            <p class="footer-text">
+                Créer des expériences web extraordinaires
+            </p>
+            <p class="footer-copyright">
+                © {currentYear} WebX Factory. Tous droits réservés.
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+<style>
+    /* Reset & Base */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --secondary: #8b5cf6;
+        --accent: #ec4899;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light: #f1f5f9;
+        --white: #ffffff;
+        --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--dark);
+        background: var(--white);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* Header */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: var(--dark);
+    }
+
+    .logo-icon {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .cta-nav {
+        background: var(--gradient);
+        color: white !important;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8rem 2rem 4rem;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 900px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        color: var(--primary);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--gray);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background: var(--gradient);
+        color: white;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--dark);
+        border: 2px solid var(--light);
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .btn-large {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    .btn-icon {
+        font-size: 1.25rem;
+    }
+
+    .deploy-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(34, 197, 94, 0.1);
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        color: var(--gray);
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    /* Hero Background Animation */
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.3;
+        animation: float 20s infinite;
+    }
+
+    .circle-1 {
+        width: 500px;
+        height: 500px;
+        background: var(--primary);
+        top: -200px;
+        left: -200px;
+    }
+
+    .circle-2 {
+        width: 400px;
+        height: 400px;
+        background: var(--secondary);
+        bottom: -150px;
+        right: -150px;
+        animation-delay: -5s;
+    }
+
+    .circle-3 {
+        width: 300px;
+        height: 300px;
+        background: var(--accent);
+        top: 50%;
+        left: 50%;
+        animation-delay: -10s;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0); }
+        33% { transform: translate(30px, -50px); }
+        66% { transform: translate(-20px, 20px); }
+    }
+
+    /* Services Section */
+    .services {
+        padding: 6rem 0;
+        background: var(--light);
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--gray);
+        font-size: 1.125rem;
+        margin-bottom: 4rem;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card.featured {
+        border: 2px solid var(--primary);
+        transform: scale(1.05);
+    }
+
+    .service-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--gradient);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+        list-style: none;
+    }
+
+    .service-features li {
+        padding: 0.5rem 0;
+        color: var(--gray);
+    }
+
+    /* Stats Section */
+    .stats {
+        padding: 6rem 0;
+        background: var(--dark);
+        color: white;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+    }
+
+    .stat-card {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        color: var(--gray);
+        font-size: 1rem;
+    }
+
+    /* Tech Section */
+    .tech {
+        padding: 6rem 0;
+    }
+
+    .tech-stack {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem;
+        background: var(--light);
+        border-radius: 1rem;
+        transition: all 0.3s;
+    }
+
+    .tech-item:hover {
+        transform: translateY(-5px);
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .tech-logo {
+        font-size: 3rem;
+    }
+
+    .tech-name {
+        font-weight: 600;
+        color: var(--dark);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 6rem 0;
+        background: var(--light);
+    }
+
+    .contact-content {
+        text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 3rem 0;
+        background: var(--dark);
+        color: white;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+    }
+
+    .footer-text {
+        color: var(--gray);
+        margin-bottom: 1rem;
+    }
+
+    .footer-copyright {
+        color: var(--gray);
+        font-size: 0.875rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+
+        .hero {
+            padding: 6rem 1rem 3rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-card.featured {
+            transform: none;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .tech-stack {
+            gap: 1.5rem;
+        }
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Selection */
+    ::selection {
+        background: var(--primary);
+        color: white;
+    }
+</style>
